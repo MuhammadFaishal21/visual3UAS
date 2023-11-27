@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 130
-  Top = 355
+  Left = 306
+  Top = 317
   Width = 385
   Height = 300
   Caption = 'Form1'
@@ -4772,16 +4772,15 @@ object Form1: TForm1
   end
   object btn1: TButton
     Left = 160
-    Top = 224
+    Top = 228
     Width = 75
-    Height = 25
+    Height = 21
     Caption = 'LOGIN'
     TabOrder = 2
     OnClick = btn1Click
   end
   object zqry: TZQuery
     Connection = con
-    Active = True
     SQL.Strings = (
       'select * from table_user')
     Params = <>
@@ -4797,13 +4796,12 @@ object Form1: TForm1
     ControlsCodePage = cGET_ACP
     UTF8StringsAsWideField = False
     AutoEncodeStrings = False
-    Connected = True
     HostName = 'localhost'
     Port = 3306
     Database = 'visual3'
     User = 'root'
     Protocol = 'mysql'
-    LibraryLocation = 'D:\Kuliah 5\Visual3\Visual3 Tugas\libmysql.dll'
+    LibraryLocation = 'D:\Visual3 Tugas\libmysql.dll'
     Left = 40
     Top = 176
   end

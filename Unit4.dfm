@@ -1,9 +1,9 @@
-object Form3: TForm3
-  Left = 363
-  Top = 196
+object Form4: TForm4
+  Left = 175
+  Top = 335
   Width = 928
   Height = 480
-  Caption = 'Form3'
+  Caption = 'Form4'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,12 +13,6 @@ object Form3: TForm3
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
-  object l2: TLabel
-    Left = 52
-    Top = 120
-    Width = 3
-    Height = 13
-  end
   object l1: TLabel
     Left = 4
     Top = 12
@@ -122,7 +116,6 @@ object Form3: TForm3
     TitleFont.Height = -11
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
-    OnCellClick = dbgrd1CellClick
     Columns = <
       item
         Expanded = False
@@ -171,7 +164,6 @@ object Form3: TForm3
     Height = 29
     Caption = 'Baru'
     TabOrder = 1
-    OnClick = b1Click
   end
   object b2: TButton
     Left = 224
@@ -180,7 +172,6 @@ object Form3: TForm3
     Height = 33
     Caption = 'Simpan'
     TabOrder = 2
-    OnClick = b2Click
   end
   object b3: TButton
     Left = 332
@@ -189,7 +180,6 @@ object Form3: TForm3
     Height = 33
     Caption = 'Edit'
     TabOrder = 3
-    OnClick = b3Click
   end
   object b4: TButton
     Left = 432
@@ -198,7 +188,6 @@ object Form3: TForm3
     Height = 33
     Caption = 'Hapus'
     TabOrder = 4
-    OnClick = b4Click
   end
   object b5: TButton
     Left = 540
@@ -207,7 +196,6 @@ object Form3: TForm3
     Height = 33
     Caption = 'Batal'
     TabOrder = 5
-    OnClick = b5Click
   end
   object b6: TButton
     Left = 644
@@ -216,7 +204,6 @@ object Form3: TForm3
     Height = 33
     Caption = 'Print'
     TabOrder = 6
-    OnClick = b6Click
   end
   object e_1: TEdit
     Left = 72
@@ -276,7 +263,6 @@ object Form3: TForm3
     ControlsCodePage = cGET_ACP
     UTF8StringsAsWideField = False
     AutoEncodeStrings = False
-    Connected = True
     HostName = 'Localhost'
     Port = 3306
     Database = 'visual3'
@@ -288,7 +274,6 @@ object Form3: TForm3
   end
   object zqry1: TZQuery
     Connection = con1
-    Active = True
     SQL.Strings = (
       'select * from userr'
       ''
