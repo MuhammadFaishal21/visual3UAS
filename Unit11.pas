@@ -1,0 +1,211 @@
+unit Unit11;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, frxClass, frxDBSet, DB, ZAbstractRODataset, ZAbstractDataset,
+  ZDataset, ZAbstractConnection, ZConnection, ComCtrls, StdCtrls, Grids,
+  DBGrids;
+
+type
+  TForm11 = class(TForm)
+    l2: TLabel;
+    l1: TLabel;
+    l3: TLabel;
+    l4: TLabel;
+    l5: TLabel;
+    dbgrd1: TDBGrid;
+    b1: TButton;
+    b2: TButton;
+    b3: TButton;
+    b4: TButton;
+    b5: TButton;
+    b6: TButton;
+    e_1: TEdit;
+    e_3: TEdit;
+    e_2: TEdit;
+    dtp1: TDateTimePicker;
+    con1: TZConnection;
+    zqry1: TZQuery;
+    ds1: TDataSource;
+    frxDBDataset1: TfrxDBDataset;
+    frxReport1: TfrxReport;
+    zqry2: TZQuery;
+    procedure b1Click(Sender: TObject);
+    procedure b2Click(Sender: TObject);
+     procedure FormShow(Sender: TObject);
+    procedure posisiawal;
+     procedure bersih;
+    procedure b3Click(Sender: TObject);
+    procedure b4Click(Sender: TObject);
+    procedure b5Click(Sender: TObject);
+    procedure b6Click(Sender: TObject);
+    procedure dbgrd1CellClick(Column: TColumn);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form11: TForm11;
+  id:string;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm11.b1Click(Sender: TObject);
+begin
+b1.Enabled:= True;
+b2.Enabled:= True;
+b3.Enabled:= False;
+b4.Enabled:= False;
+b5.Enabled:= True;
+b6.Enabled:= True;
+e_1.Enabled:= True;
+dtp1.Enabled:=True;
+e_2.Enabled:= True;
+e_3.Enabled:= True;
+end;
+
+procedure TForm11.b2Click(Sender: TObject);
+begin
+if e_1.Text='' then
+  begin
+    ShowMessage('ID BELUM DIISI DENGAN BENAR');
+    end else
+    if e_2.text=''then
+    begin
+    ShowMessage('SUPPLIER ID BELUM SESUAI');
+    end else
+     if e_3.text=''then
+    begin
+    ShowMessage('OBAT ID BELUM SESUAI');
+    end else
+     if Form11.zqry1.Locate('id',e_1.Text,[]) then
+  begin
+   ShowMessage('DATA SUDAH ADA DALAM SISTEM');
+  end else
+  begin
+
+ zqry1.SQL.Clear;
+zqry1.SQL.Add('insert into exp_obat values("'+e_1.Text+'","'+formatdatetime('yyyy-mm-dd',dtp1.Date)+'","'+e_2.Text+'","'+e_3.Text+'")');
+ zqry1.ExecSQL ;
+
+ zqry1.SQL.Clear;
+ zqry1.SQL.Add('select * from exp_obat');
+ zqry1.Open;
+ShowMessage('DATA BARHASIL DISIMPAN!');
+end;
+end;
+
+procedure TForm11.b3Click(Sender: TObject);
+begin
+ if (e_1.Text= '')or (e_2.Text ='')or(e_3.Text= '')then
+begin
+  ShowMessage('INPUTAN WAJIB DIISI!');
+end else
+if e_1.Text = zqry1.Fields[1].AsString then
+begin
+ ShowMessage('DATA TIDAK ADA PERUBAHAN');
+end else
+begin
+ ShowMessage('DATA BERHASIL DIUPDATE!');
+zqry1.SQL.Clear;
+zqry1.SQL.Add('Update exp_obat set id= "'+e_1.Text+'",supplier_id="'+e_2.Text+'",obat_id="'+e_3.Text+'" where id="'+id+'"');
+zqry1. ExecSQL;
+
+zqry1.SQL.Clear;
+zqry1.SQL.Add('select * from exp_obat');
+zqry1.Open;
+end;
+end;
+procedure TForm11.b4Click(Sender: TObject);
+begin
+if MessageDlg('APAKAH YAKIN MENGHAPUS DATA INI?',mtWarning,[mbYes,mbNo],0)= mryes then
+begin
+zqry1.SQL.Clear;
+zqry1.SQL.Add(' delete from exp_obat where id="'+id+'"');
+zqry1. ExecSQL;
+zqry1.SQL.Clear;
+zqry1.SQL.Add('select * from exp_obat');
+zqry1.Open;
+ShowMessage('DATA BERHASIL DIHAPUS');
+posisiawal;
+end else
+begin
+ ShowMessage('DATA BATAL DIHAPUS');
+
+end;
+end;
+
+procedure TForm11.b5Click(Sender: TObject);
+begin
+posisiawal;
+end;
+
+procedure TForm11.b6Click(Sender: TObject);
+begin
+frxReport1.ShowReport();
+end;
+procedure TForm11.posisiawal;
+begin
+b1.Enabled:= True;
+b2.Enabled:= False;
+b3.Enabled:= False;
+b4.Enabled:= False;
+b5.Enabled:= False;
+e_1.Enabled:= false;
+dtp1.Enabled:=False;
+e_2.Enabled:= false;
+e_3.Enabled:= false;
+end;
+
+
+
+
+procedure TForm11.bersih;
+begin
+e_1.Clear;
+e_2.Clear;
+e_3.Clear;
+
+end;
+
+procedure TForm11.FormShow(Sender: TObject);
+begin
+bersih;
+b1.Enabled:=true;
+b2.Enabled:=false;
+b3.Enabled:=false;
+b4.Enabled:=false;
+b5.Enabled:=false;
+b6.Enabled:=false;
+e_1.Enabled:= false;
+dtp1.Enabled:=False;
+e_2.Enabled:= false;
+e_3.Enabled:= false;
+end;
+
+procedure TForm11.dbgrd1CellClick(Column: TColumn);
+begin
+id:= zqry1.Fields[0].AsString;
+e_2.Text:= zqry1.Fields[2].AsString;
+e_3.Text:= zqry1.Fields[3].AsString;
+
+e_1.Enabled:= True;
+dtp1.Enabled:=True;
+e_2.Enabled:= True;
+e_3.Enabled:= True;
+
+
+b1.Enabled:= false;
+b2.Enabled:= False;
+b3.Enabled:= True;
+b4.Enabled:= True;
+b5.Enabled:= True;
+end;
+
+end.

@@ -20,8 +20,8 @@ object Form3: TForm3
     Height = 13
   end
   object l1: TLabel
-    Left = 4
-    Top = 12
+    Left = 20
+    Top = 8
     Width = 13
     Height = 15
     Caption = 'ID'

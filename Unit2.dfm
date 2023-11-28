@@ -1,6 +1,6 @@
 object Form2: TForm2
-  Left = 61
-  Top = 113
+  Left = 313
+  Top = 151
   Width = 928
   Height = 480
   Caption = 'Form2'
@@ -1664,24 +1664,31 @@ object Form2: TForm2
       end
       object Kostumer1: TMenuItem
         Caption = 'Kostumer'
+        OnClick = Kostumer1Click
       end
       object Penjualan1: TMenuItem
         Caption = 'Penjualan'
+        OnClick = Penjualan1Click
       end
       object Pembelian1: TMenuItem
         Caption = 'Pembelian'
+        OnClick = Pembelian1Click
       end
       object Supplier1: TMenuItem
         Caption = 'Supplier'
+        OnClick = Supplier1Click
       end
       object DetailJual1: TMenuItem
         Caption = 'Detail Jual'
+        OnClick = DetailJual1Click
       end
       object DetailBeli1: TMenuItem
         Caption = 'Exp Obat'
+        OnClick = DetailBeli1Click
       end
       object N1: TMenuItem
-        Caption = '----------'
+        Caption = 'Detail Beli'
+        OnClick = N1Click
       end
     end
     object Profil1: TMenuItem

@@ -25,6 +25,13 @@ type
     procedure User1Click(Sender: TObject);
     procedure Logout1Click(Sender: TObject);
     procedure Obat1Click(Sender: TObject);
+    procedure Kostumer1Click(Sender: TObject);
+    procedure Supplier1Click(Sender: TObject);
+    procedure Penjualan1Click(Sender: TObject);
+    procedure Pembelian1Click(Sender: TObject);
+    procedure DetailBeli1Click(Sender: TObject);
+    procedure DetailJual1Click(Sender: TObject);
+    procedure N1Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -37,7 +44,7 @@ var
 
 implementation
 
-uses Unit3, Unit5;
+uses Unit3, Unit5, Unit6, Unit7, Unit8, Unit9, Unit10, Unit11, Unit12;
 
 {$R *.dfm}
 
@@ -59,6 +66,41 @@ end;
 procedure TForm2.Obat1Click(Sender: TObject);
 begin
 Form5.show;
+end;
+
+procedure TForm2.Kostumer1Click(Sender: TObject);
+begin
+Form6.show;
+end;
+
+procedure TForm2.Supplier1Click(Sender: TObject);
+begin
+Form9.Show;
+end;
+
+procedure TForm2.Penjualan1Click(Sender: TObject);
+begin
+Form7.Show;
+end;
+
+procedure TForm2.Pembelian1Click(Sender: TObject);
+begin
+Form8.Show;
+end;
+
+procedure TForm2.DetailBeli1Click(Sender: TObject);
+begin
+Form11.show;
+end;
+
+procedure TForm2.DetailJual1Click(Sender: TObject);
+begin
+   Form10.Show;
+end;
+
+procedure TForm2.N1Click(Sender: TObject);
+begin
+ Form12.Show;
 end;
 
 end.
