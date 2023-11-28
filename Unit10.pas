@@ -134,18 +134,18 @@ end;
 
 procedure TForm10.b3Click(Sender: TObject);
 begin
-if (e_1.Text= '')or (e_2.Text ='')or(e_3.Text= '')or (e_4.Text ='')or(e_5.Text='')or(e_6.Text ='')or(e_7.Text ='')or(e_8.Text='') then
+if (e_4.Text ='')or(e_6.Text ='')or(e_7.Text ='')or(e_8.Text='') then
 begin
   ShowMessage('INPUTAN WAJIB DIISI!');
 end else
-if e_1.Text = zqry1.Fields[1].AsString then
+if e_4.Text = zqry1.Fields[4].AsString then
 begin
  ShowMessage('DATA TIDAK ADA PERUBAHAN');
 end else
 begin
  ShowMessage('DATA BERHASIL DIUPDATE!');
 zqry1.SQL.Clear;
-zqry1.SQL.Add('Update detail_jual set id= "'+e_1.Text+'",obat_id="'+e_2.Text+'",exp_id="'+e_3.Text+'",jumlah_terjual="'+e_4.Text+'",ksotumer_id="'+e_5.Text+'",qty="'+e_6.Text+'",harga_jual="'+e_7.Text+'",harga_beli="'+e_8.Text+'" where id="'+id+'"');
+zqry1.SQL.Add('Update detail_jual set jumlah_terjual= "'+e_4.Text+'",qty="'+e_6.Text+'",harga_jual="'+e_7.Text+'",harga_beli="'+e_8.Text+'" where id="'+id+'"');
 zqry1. ExecSQL;
 
 zqry1.SQL.Clear;

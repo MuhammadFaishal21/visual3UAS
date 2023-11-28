@@ -110,24 +110,26 @@ end;
 
 procedure TForm12.b3Click(Sender: TObject);
 begin
-if (e_1.Text= '')or (e_2.Text ='')or(e_3.Text= '')or (e_4.Text ='')then
-begin
-  ShowMessage('INPUTAN WAJIB DIISI!');
-end else
-if e_1.Text = zqry1.Fields[1].AsString then
-begin
- ShowMessage('DATA TIDAK ADA PERUBAHAN');
-end else
-begin
- ShowMessage('DATA BERHASIL DIUPDATE!');
-zqry1.SQL.Clear;
-zqry1.SQL.Add('Update detail_beli set id= "'+e_1.Text+'",obat_id="'+e_2.Text+'",exp_id="'+e_3.Text+'",qty="'+e_4.Text+'" where id="'+id+'"');
+  if (e_4.Text = '') then
+  begin
+    ShowMessage('INPUTAN WAJIB DIISI!');
+  end
+  else if e_4.Text = zqry1.Fields[3].AsString then
+  begin
+    ShowMessage('DATA TIDAK ADA PERUBAHAN');
+  end
+  else
+  begin
+    ShowMessage('DATA BERHASIL DIUPDATE!');
+    zqry1.SQL.Clear;
+    zqry1.SQL.Add('Update detail_beli set qty="' + e_4.Text + '" where id="' + id + '"');
+    zqry1.ExecSQL;
 
-zqry1.SQL.Clear;
-zqry1.SQL.Add('select * from detail_beli');
-zqry1.Open;
-
-end;
+    // Refresh dataset setelah update
+    zqry1.SQL.Clear;
+    zqry1.SQL.Add('select * from detail_beli');
+    zqry1.Open;
+  end;
 end;
 
 procedure TForm12.b4Click(Sender: TObject);
@@ -198,9 +200,9 @@ end;
 procedure TForm12.dbgrd1CellClick(Column: TColumn);
 begin
 id:= zqry1.Fields[0].AsString;
-e_2.Text:= zqry1.Fields[2].AsString;
-e_3.Text:= zqry1.Fields[3].AsString;
-e_4.Text:= zqry1.Fields[4].AsString;
+e_2.Text:= zqry1.Fields[1].AsString;
+e_3.Text:= zqry1.Fields[2].AsString;
+e_4.Text:= zqry1.Fields[3].AsString;
 
 
 e_1.Enabled:= True;
