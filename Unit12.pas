@@ -113,12 +113,11 @@ begin
   if (e_4.Text = '') then
   begin
     ShowMessage('INPUTAN WAJIB DIISI!');
-  end
-  else if e_4.Text = zqry1.Fields[3].AsString then
+  end else
+  if e_4.Text = zqry1.Fields[3].AsString then
   begin
     ShowMessage('DATA TIDAK ADA PERUBAHAN');
-  end
-  else
+  end else
   begin
     ShowMessage('DATA BERHASIL DIUPDATE!');
     zqry1.SQL.Clear;
