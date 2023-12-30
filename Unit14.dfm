@@ -1,9 +1,9 @@
-object Form2: TForm2
-  Left = 313
-  Top = 151
+object Form14: TForm14
+  Left = 192
+  Top = 165
   Width = 928
   Height = 480
-  Caption = 'Form2'
+  Caption = 'Form14'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,8 +15,8 @@ object Form2: TForm2
   PixelsPerInch = 96
   TextHeight = 13
   object img1: TImage
-    Left = -48
-    Top = -128
+    Left = -20
+    Top = -139
     Width = 1068
     Height = 720
     AutoSize = True
@@ -1650,45 +1650,25 @@ object Form2: TForm2
       A2243C110A21442858344442D8921EF11323644444446C89FECF5FFFD9}
   end
   object mm1: TMainMenu
-    Left = 48
-    Top = 40
+    Left = 16
+    Top = 20
     object Menu1: TMenuItem
-      Caption = 'Menu'
-      object User1: TMenuItem
-        Caption = 'User'
-        OnClick = User1Click
-      end
+      Caption = 'Data'
       object Obat1: TMenuItem
         Caption = 'Obat'
         OnClick = Obat1Click
-      end
-      object Kostumer1: TMenuItem
-        Caption = 'Kostumer'
-        OnClick = Kostumer1Click
-      end
-      object Penjualan1: TMenuItem
-        Caption = 'Penjualan'
-        OnClick = Penjualan1Click
       end
       object Pembelian1: TMenuItem
         Caption = 'Pembelian'
         OnClick = Pembelian1Click
       end
-      object Supplier1: TMenuItem
-        Caption = 'Supplier'
-        OnClick = Supplier1Click
-      end
-      object DetailJual1: TMenuItem
-        Caption = 'Detail Jual'
-        OnClick = DetailJual1Click
+      object ExpObat1: TMenuItem
+        Caption = 'Exp Obat'
+        OnClick = ExpObat1Click
       end
       object DetailBeli1: TMenuItem
-        Caption = 'Exp Obat'
-        OnClick = DetailBeli1Click
-      end
-      object N1: TMenuItem
         Caption = 'Detail Beli'
-        OnClick = N1Click
+        OnClick = DetailBeli1Click
       end
     end
     object Profil1: TMenuItem

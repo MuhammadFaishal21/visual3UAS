@@ -1698,5 +1698,9 @@ object Form2: TForm2
       Caption = 'Logout'
       OnClick = Logout1Click
     end
+    object innerjointabledetailbeliobatexp1: TMenuItem
+      Caption = 'inner join table detail_beli,obat,exp'
+      OnClick = innerjointabledetailbeliobatexp1Click
+    end
   end
 end

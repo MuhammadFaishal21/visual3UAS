@@ -1,0 +1,114 @@
+unit Unit2;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus, jpeg, ExtCtrls;
+
+type
+  TForm2 = class(TForm)
+    img1: TImage;
+    mm1: TMainMenu;
+    Menu1: TMenuItem;
+    User1: TMenuItem;
+    Obat1: TMenuItem;
+    Kostumer1: TMenuItem;
+    Penjualan1: TMenuItem;
+    Pembelian1: TMenuItem;
+    Supplier1: TMenuItem;
+    DetailJual1: TMenuItem;
+    DetailBeli1: TMenuItem;
+    N1: TMenuItem;
+    Profil1: TMenuItem;
+    Logout1: TMenuItem;
+    innerjointabledetailbeliobatexp1: TMenuItem;
+    procedure User1Click(Sender: TObject);
+    procedure Logout1Click(Sender: TObject);
+    procedure Obat1Click(Sender: TObject);
+    procedure Kostumer1Click(Sender: TObject);
+    procedure Supplier1Click(Sender: TObject);
+    procedure Penjualan1Click(Sender: TObject);
+    procedure Pembelian1Click(Sender: TObject);
+    procedure DetailBeli1Click(Sender: TObject);
+    procedure DetailJual1Click(Sender: TObject);
+    procedure N1Click(Sender: TObject);
+    procedure innerjointabledetailbeliobatexp1Click(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+uses Unit3, Unit5, Unit6, Unit7, Unit8, Unit9, Unit10, Unit11, Unit12,
+  Unit15;
+
+{$R *.dfm}
+
+
+
+procedure TForm2.User1Click(Sender: TObject);
+begin
+Form3.Show;
+end;
+
+procedure TForm2.Logout1Click(Sender: TObject);
+begin
+if application.MessageBox('Yakin ingin logout?','Konfirmasi Ulang',MB_YesNo)=ID_Yes then
+begin
+Form2.Close;
+end;
+end;
+
+procedure TForm2.Obat1Click(Sender: TObject);
+begin
+Form5.show;
+end;
+
+procedure TForm2.Kostumer1Click(Sender: TObject);
+begin
+Form6.show;
+end;
+
+procedure TForm2.Supplier1Click(Sender: TObject);
+begin
+Form9.Show;
+end;
+
+procedure TForm2.Penjualan1Click(Sender: TObject);
+begin
+Form7.Show;
+end;
+
+procedure TForm2.Pembelian1Click(Sender: TObject);
+begin
+Form8.Show;
+end;
+
+procedure TForm2.DetailBeli1Click(Sender: TObject);
+begin
+Form11.show;
+end;
+
+procedure TForm2.DetailJual1Click(Sender: TObject);
+begin
+   Form10.Show;
+end;
+
+procedure TForm2.N1Click(Sender: TObject);
+begin
+ Form12.Show;
+end;
+
+procedure TForm2.innerjointabledetailbeliobatexp1Click(Sender: TObject);
+begin
+Form15.show;
+end;
+
+end.

@@ -1,6 +1,6 @@
 object Form1: TForm1
-  Left = 368
-  Top = 214
+  Left = 197
+  Top = 82
   Width = 385
   Height = 300
   Caption = 'Form1'
@@ -15,7 +15,7 @@ object Form1: TForm1
   TextHeight = 13
   object img1: TImage
     Left = 0
-    Top = 4
+    Top = 8
     Width = 365
     Height = 257
     Picture.Data = {
@@ -4726,7 +4726,7 @@ object Form1: TForm1
   end
   object lbl2: TLabel
     Left = 168
-    Top = 136
+    Top = 124
     Width = 57
     Height = 13
     Caption = 'PASSWORD'
@@ -4746,7 +4746,7 @@ object Form1: TForm1
   end
   object e_2: TEdit
     Left = 120
-    Top = 160
+    Top = 144
     Width = 161
     Height = 27
     Font.Charset = ANSI_CHARSET
@@ -4771,13 +4771,31 @@ object Form1: TForm1
     TabOrder = 1
   end
   object btn1: TButton
-    Left = 160
-    Top = 228
+    Left = 104
+    Top = 204
     Width = 75
     Height = 21
     Caption = 'LOGIN'
     TabOrder = 2
     OnClick = btn1Click
+  end
+  object b1: TButton
+    Left = 200
+    Top = 200
+    Width = 75
+    Height = 25
+    Caption = 'REGISTER'
+    TabOrder = 3
+    OnClick = b1Click
+  end
+  object chk1: TCheckBox
+    Left = 104
+    Top = 175
+    Width = 97
+    Height = 17
+    Caption = 'Show Password'
+    TabOrder = 4
+    OnClick = chk1Click
   end
   object zqry: TZQuery
     Connection = con
@@ -4785,7 +4803,7 @@ object Form1: TForm1
       'select * from table_user')
     Params = <>
     Left = 40
-    Top = 32
+    Top = 36
   end
   object ds: TDataSource
     DataSet = zqry
